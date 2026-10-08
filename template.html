@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shelf</title>
+<title>Naru</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
@@ -302,7 +302,7 @@
           <line x1="6" y1="7.5" x2="6.01" y2="7.5"></line>
           <line x1="6" y1="16.5" x2="6.01" y2="16.5"></line>
         </svg>
-        Shelf
+        Naru
       </a>
       <div class="topbar-spacer"></div>
       <a class="ghost" href="https://github.com/KangminNa/shelf">GitHub</a>
@@ -316,19 +316,19 @@
   <section class="hero" id="top">
     <div class="wrap">
       <div class="label">
-        <span lang="ko">셀프호스팅 앱 플랫폼</span><span lang="en">Self-hosted app platform</span>
+        <span lang="ko">프록시 매니저 + CI/CD</span><span lang="en">Proxy manager + CI/CD</span>
       </div>
 
       <h1>
-        <span lang="ko">서버 한 대에 앱을 <em>얹어두면</em> 계속 돌아갑니다</span>
-        <span lang="en">Put an app on the shelf. It <em>stays</em> running.</span>
+        <span lang="ko">도메인은 화면에서, <em>배포는 push로</em></span>
+        <span lang="en">Domains from a screen. <em>Deploys</em> from a push.</span>
       </h1>
 
       <p class="hero-lede">
-        <span lang="ko">Git 저장소나 Docker 이미지를 컨테이너로 배포하고, <strong>도메인·SSL·CI/CD를 대신 처리합니다.</strong>
-          nginx 설정 파일도, 인증서 갱신 크론도 직접 만들지 않습니다.</span>
-        <span lang="en">Deploy a Git repository or a Docker image as a container. Shelf <strong>handles the domain,
-          the certificate, and the deploy pipeline</strong> — no nginx config to write, no renewal cron to babysit.</span>
+        <span lang="ko">Nginx Proxy Manager처럼 화면에서 도메인과 HTTPS를 관리하고, <strong>push하면 빌드·배포까지</strong> 합니다.
+          nginx 설정 파일도, 인증서 갱신 크론도, 배포 스크립트도 직접 만들지 않습니다.</span>
+        <span lang="en">Manage domains and HTTPS from a screen, the way Nginx Proxy Manager does — and <strong>push to build and deploy</strong>.
+          No nginx config to write, no renewal cron to babysit, no deploy script to maintain.</span>
       </p>
 
       <div class="cta-row">
@@ -349,9 +349,9 @@
         <div class="frame">
           <div class="frame-bar">
             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="frame-url">shelf.example.com/admin</span>
+            <span class="frame-url">naru.example.com/admin</span>
           </div>
-          <img src="{{IMG_DASHBOARD}}" width="1360" alt="Shelf 대시보드: 호스트 CPU·메모리·디스크와 앱별 사용량">
+          <img src="{{IMG_DASHBOARD}}" width="1360" alt="Naru 대시보드: 호스트 CPU·메모리·디스크와 앱별 사용량">
         </div>
       </div>
     </div>
@@ -359,6 +359,35 @@
 </div>
 
 <main>
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <h2><span lang="ko">왜 만들었나</span><span lang="en">Why it exists</span></h2>
+        <p>
+          <span lang="ko">Nginx Proxy Manager를 자주 썼습니다. 그런데 필요한 건 조금 달랐습니다.</span>
+          <span lang="en">I used Nginx Proxy Manager a lot. What I needed was a little different.</span>
+        </p>
+      </div>
+      <div class="limits">
+        <div class="limit">
+          <span class="label"><span lang="ko">Caddy판 Proxy Manager</span><span lang="en">A proxy manager for Caddy</span></span>
+          <p><span lang="ko">Caddy는 HTTPS 자동 발급·갱신과 HTTP/3가 기본이지만 CLI와 설정 파일로만 다룹니다. 그걸 NPM처럼 화면에서 다룹니다. 엔진을 Caddy로 바꾸는 v2를 만들고 있습니다.</span>
+             <span lang="en">Caddy gives you automatic HTTPS and HTTP/3 by default, but you drive it from the CLI and config files. Naru puts it on a screen, the way NPM does. v2, which moves the engine to Caddy, is in progress.</span></p>
+        </div>
+        <div class="limit">
+          <span class="label"><span lang="ko">CI/CD가 같이</span><span lang="en">CI/CD included</span></span>
+          <p><span lang="ko">NPM은 도메인만 붙여줍니다. 앱은 따로 빌드하고 띄워야 했습니다. Naru는 push하면 빌드·배포·도메인 연결까지 한 번에 합니다.</span>
+             <span lang="en">NPM only points domains; the app still had to be built and started somewhere else. Naru builds, deploys and wires up the domain when you push.</span></p>
+        </div>
+        <div class="limit">
+          <span class="label"><span lang="ko">서버 한 대에 가볍게</span><span lang="en">Light, for one server</span></span>
+          <p><span lang="ko">여러 대를 다루는 PaaS는 관리 도구만으로 무겁습니다. Naru는 컨테이너 하나, 런타임 의존성 4개로 돕니다.</span>
+             <span lang="en">Multi-server PaaS tools are heavy before you deploy anything. Naru is one container with four runtime dependencies.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="band">
     <div class="wrap">
       <div class="row">
@@ -455,7 +484,7 @@
       <div class="figures">
         <div class="figure"><b>1</b><span lang="ko">서버 한 대면 충분</span><span lang="en">server is enough</span></div>
         <div class="figure"><b>4</b><span lang="ko">런타임 의존성</span><span lang="en">runtime dependencies</span></div>
-        <div class="figure"><b>96</b><span lang="ko">자동 테스트</span><span lang="en">automated tests</span></div>
+        <div class="figure"><b>99</b><span lang="ko">자동 테스트</span><span lang="en">automated tests</span></div>
         <div class="figure"><b>2</b><span lang="ko">외부 노출 포트</span><span lang="en">ports exposed</span></div>
       </div>
     </div>
@@ -479,7 +508,7 @@
 <span class="pmt">$</span> docker compose up -d --build
 
 <span class="cmt"># <span lang="ko">도메인을 .env 에 적으면 부팅할 때 프록시에 자동 등록됩니다</span><span lang="en">put your domain in .env and it is routed at boot</span></span>
-<span class="cmt">#   ADMIN_DOMAIN=shelf.example.com</span>
+<span class="cmt">#   ADMIN_DOMAIN=naru.example.com</span>
 <span class="cmt">#   ACME_EMAIL=you@example.com</span></code></pre>
       </div>
     </div>
@@ -533,8 +562,8 @@
 <footer>
   <div class="wrap">
     <p>
-      <span lang="ko">Shelf — 당신의 서버, 당신의 앱, 당신의 규칙.</span>
-      <span lang="en">Shelf — your server, your apps, your rules.</span>
+      <span lang="ko">Naru — 내 서버의 나루터.</span>
+      <span lang="en">Naru — where your services dock.</span>
     </p>
     <div class="foot-links">
       <a class="ghost" href="https://github.com/KangminNa/shelf">GitHub</a>
@@ -552,10 +581,10 @@
     const apply = (lang) => {
       root.setAttribute('data-lang', lang);
       buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)));
-      try { localStorage.setItem('shelf-lang', lang); } catch {}
+      try { localStorage.setItem('naru-lang', lang); } catch {}
     };
     let stored = 'ko';
-    try { stored = localStorage.getItem('shelf-lang') || (navigator.language.startsWith('ko') ? 'ko' : 'en'); } catch {}
+    try { stored = localStorage.getItem('naru-lang') || (navigator.language.startsWith('ko') ? 'ko' : 'en'); } catch {}
     apply(stored === 'en' ? 'en' : 'ko');
     buttons.forEach((b) => b.addEventListener('click', () => apply(b.dataset.setLang)));
   })();

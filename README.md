@@ -1,10 +1,10 @@
 # shelf-site
 
-[Shelf](https://github.com/KangminNa/shelf) 소개 페이지입니다.
+[Naru](https://github.com/KangminNa/shelf) 소개 페이지입니다.
 
-Shelf 위에 올리는 다른 앱과 똑같이 생겼습니다 — 루트에 `Dockerfile`이 있고, 컨테이너가 포트 하나(`4023`)로 HTTP를 서빙합니다.
+Naru 위에 올리는 다른 앱과 똑같이 생겼습니다 — 루트에 `Dockerfile`이 있고, 컨테이너가 포트 하나(`4023`)로 HTTP를 서빙합니다.
 
-## Shelf에 올리기
+## Naru에 올리기
 
 **Apps → New app**
 
